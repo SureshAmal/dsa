@@ -24,9 +24,6 @@
 # Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
 
-from _typeshed import SliceableBuffer
-
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val

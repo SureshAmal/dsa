@@ -29,13 +29,14 @@
 # The value of each node in the list is unique.
 # The node to be deleted is in the list and is not a tail node.
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 
-def addElements(nums:list)->ListNode:
+def addElements(nums: list) -> ListNode:
     dummy = ListNode()
     current = dummy
 
@@ -45,25 +46,24 @@ def addElements(nums:list)->ListNode:
 
     return dummy.next
 
-def printList(head:ListNode)->None:
+
+def printList(head: ListNode) -> None:
     start = head
     print("==List==")
     while start:
-        print(start.val,end="")
+        print(start.val, end="")
         start = start.next
     print("\n========")
 
+
 # rather than deleting we are replacing next node with
-def deleteNode(node:ListNode)->None:
-    node.val = node.next.val 
+def deleteNode(node: ListNode) -> None:
+    node.val = node.next.val
     node.next = node.next.next
 
-li = addElements([4,5,1,9])
+
+li = addElements([4, 5, 1, 9])
 
 printList(li)
-
-
-
 deleteNode(li)
-
 printList(li)

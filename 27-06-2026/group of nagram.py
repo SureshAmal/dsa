@@ -23,7 +23,7 @@
 # strs[i] consists of lowercase English letters.
 
 
-def groupngram(strs:list)->list[list[str]]:
+def groupngram(strs: list) -> list[list[str]]:
     chars = {}
     for word in strs:
         key = "".join(sorted(word))
@@ -35,5 +35,5 @@ def groupngram(strs:list)->list[list[str]]:
 
     return list(chars.values())
 
-print(groupngram(["eat","tea","tan","ate","nat","bat"]))
-        
+
+print(groupngram(["eat", "tea", "tan", "ate", "nat", "bat"]))

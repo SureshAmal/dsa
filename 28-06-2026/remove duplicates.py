@@ -33,25 +33,18 @@
 
 
 def removeDuplicatesFromArray(nums: list[int]) -> int:
-    h = {}
     left = 0
-    right = len(nums) - 1
-
-    while left <= right:
-        h[nums[left]] = h.get(nums[left], 0) + 1
-        if h[nums[left]] > 2:
-            nums[left], nums[right] = nums[right], nums[left]
-            right -= 1
-        elif nums[left] > nums[right]:
-            nums[left], nums[right] = nums[right], nums[left]
+    right = 0
+    while right < len(nums):
+        count = 1
+        while right + 1 < len(nums) and nums[right] == nums[right + 1]:
+            right += 1
+            count += 1
+        for _ in range(min(count, 2)):
+            nums[left] = nums[right]
             left += 1
-        elif nums[left] == nums[right]:
-            right -= 1
-        else:
-            left += 1
-
-        print(left, right, h, nums)
-    return right
+        right += 1
+    return left
 
 
 print(removeDuplicatesFromArray([0, 0, 1, 1, 1, 1, 2, 3, 3]))
